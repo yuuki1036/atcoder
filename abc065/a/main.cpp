@@ -1,9 +1,12 @@
 #include <bits/stdc++.h>
 using namespace std;
-#define rep(i, n) for (int i = 0; i < (int)(n); i++)
+using ll = long long;
 int main(){
-
-
-
-
+  ll x, a, b;
+  cin >> x >> a >> b;
+  string ans = "delicious";
+  if(a < b){
+    ans = a+x < b ? "dangerous" : "safe";
+  }
+  cout << ans <<endl;
 }
