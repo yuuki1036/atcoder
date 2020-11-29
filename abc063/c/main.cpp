@@ -5,16 +5,18 @@ int main(){
   cin >> n;
   int s[n];
   int ans = 0;
-  for(int i=0; i<n; ++i) cin >> s[i];
-  for(int bit=0; bit<(1<<n); ++bit){
-    int res = 0;
-    for(int i=0; i<n; ++i){
-      if(bit & (1<<i)) res += s[i];
-    }
-    if(res%10 != 0) ans = max(ans, res);
+  for(int i=0; i<n; ++i){
+    cin >> s[i];
+    ans += s[i];
   }
-  n = 100;
-  long long w = (1 << 100);
-  cout<<w<<endl;
-  for(long long i=0; i<(1<<n); ++i) cout<<i<<endl;
+  if(ans%10 != 0){ cout << ans << endl; return 0; }
+  sort(s, s+n);
+  for(int i=0; i<n; i++){
+    if(s[i]%10 != 0){
+      ans -= s[i];
+      cout << ans << endl;
+      return 0;
+    }
+  }
+  cout << 0 << endl;
 }
