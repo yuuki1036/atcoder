@@ -9,6 +9,7 @@ ll solve(ll x){
   for(int i=0; i<l; ++i){
     int num = s[i]-'0';
     res += num*pow(x, i);
+    if(res > m) return m+1;
   }
   return res;
 }
