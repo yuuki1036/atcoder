@@ -3,8 +3,8 @@ using namespace std;
 int main(){
   int n, a, x, y;
   cin >> n >> a >> x >> y;
-  if (n <= a) cout << n*x << endl;
-  else cout << ((n-a)*y+(a*x)) << endl;
-
-
+  int ans = 0;
+  if (n <= a) ans = n*x;
+  else ans = (n-a)*y+a*x;
+  cout << ans << endl;
 }
